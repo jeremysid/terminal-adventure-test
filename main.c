@@ -2,7 +2,7 @@
 #include<string.h>
 // global variables
 	char name[30];
-	
+	char compChoice(char search);
 
 void firstPart() {
 
@@ -13,29 +13,19 @@ void firstPart() {
 
 void secondPart() {
 
-	char choices[] = {'A', ',', 'B', '\0'};
-	char choiceOne[] = "Start";
-	char choiceTwo[] = "Exit";
+  char choice[10];
+  
+  do {
+	  printf("Choices: Start, Exit \n");
+	  printf("Enter Choice: ");
+	  scanf("%s", choice);
+		
+	 } while (choice == "Start");
+        for (choice == "Exit"; ;){
+		  printf("Exit\n");
+		  break;
+	   };
 
-	printf("Choices: \n");
-	printf("%s", choiceOne);
-	printf("%c", choices[1]);
-	printf("%s\n", choiceTwo);
-
-	char userChoice[10];
-
-	scanf("%s\n", &userChoice);
-
-	int resOne = strncmp(choiceOne, userChoice, 10);
-	int resTwo = strncmp(choiceTwo, userChoice, 10);
-
-	if (resOne == 0) {
-		printf("Start");
-	}
-	
-	if (resTwo == 0) {
-		printf("Exit");
-	}
 }
 
 int main() {
