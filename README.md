@@ -1,4 +1,10 @@
 # terminal-adventure
 ## Practice in C 
-### Roadmap ish later
+
+### Roadmap :
+
+> 1st - 3rd Parts
+> > 
+> 4th - 6th Parts
+
 
