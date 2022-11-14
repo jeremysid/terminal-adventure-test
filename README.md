@@ -17,7 +17,7 @@
 
 with gcc:
 
-gcc main.c -o main.sh && ./main.sh 
+ gcc main.c -o main.sh && ./main.sh 
 
                    (^ or any other like .exe or .x86_64)
 
