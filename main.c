@@ -2,7 +2,7 @@
 #include<string.h>
 
 // global variables
-	char name[30];
+char name[30];
 
 // Functions
 void firstPart();
@@ -16,14 +16,21 @@ void unstablePath();
 void unstablePathChoices();
 void continuePromptStable();
 void continuePromptUnstable();
+void stablePartOne();
+
+int startFunc(void) {
+
+firstPart();
+secondPart();
+}
 
 int exitFunc(void) {
 
-	printf("Exit");
+printf("Exit");
 }
 
 void firstPart() {
-	
+
 	printf("Welcome to Terminal Adventure\n");
 	printf("Enter your Alias: ");
 	scanf("%s", name);
@@ -46,21 +53,22 @@ void secondPart() {
 	valueOne = strcmp(start, input);
 	valueTwo = strcmp(exit, input);
 
-	if(valueOne == 0)
+	if(valueOne == 0) {
 		thirdPart();
-	if(valueTwo == 0)
+	}
+	if(valueTwo == 0) {
 		printf("Farewell, %s", name);
-
+	}
 
 }
 
 void thirdPart() {
-			
+
 	monologue();	
 }
 
 void monologue() {
-	
+
 	char introTwo[] = {"Why do you exist?\n"};
 	char options[] = {"pick from options: Stable(S), Unstable(U)\n"};
 	char stable[] = {"S"};
@@ -79,7 +87,7 @@ void monologue() {
 	valueThree = strcmp(stable, input);
 	valueFour = strcmp(unstable, input);
 	valueFive = strcmp(misc, input);
-	
+
 	switch (valueThree) {
 
 		case 0:
@@ -118,13 +126,19 @@ void nothing() {
 }
 
 void stablePath() {
-	
+
 	printf("Well then, Good Luck %s\n", name);
 	stablePathChoices();
 }
 void stablePathChoices() {
 
-	printf("Stable Path Choices\n"); 
+	stablePartOne(); 
+}
+
+void stablePartOne() {
+
+	printf("Part One - Stable");
+	
 }
 
 void unstablePath() {
@@ -154,24 +168,24 @@ void continuePromptStable() {
 
 	valueSix = strcmp(input, yes);
 	valueSeven = strcmp(input, no);
-	
+
 	switch (valueSix) {
 
-	case 0:
-		printf("Contine\n");
-		stablePath();
-    }
+		case 0:
+			printf("Contine\n");
+			stablePath();
+	}
 /*	switch (valueSeven) {
 
-	case 0:
-		exitFunc();
-    }
+case 0:
+	exitFunc();
+}
 */
 /*	if(valueSix == 0)
-		printf("Continue\n"); */
+	printf("Continue\n"); */
 	if(valueSeven == 0)
 		exitFunc();
-	
+
 
 }
 
@@ -198,25 +212,23 @@ void continuePromptUnstable() {
 		printf("Contine\n");
 		unstablePath();
 		break;
-    }
+	}
 	switch (valueSeven) {
 
 	case 0:
 		exitFunc();
 		break;
-    }
+	}
 
 /*	if(valueSix == 0)
-		printf("Continue\n");
-	if(valueSeven == 0)
-		exitFunc();
+	printf("Continue\n");
+if(valueSeven == 0)
+	exitFunc();
 */	
 }
 
 int main() {
 
-	firstPart();
-	secondPart();
-
+	startFunc();
 	return 0;
 }
