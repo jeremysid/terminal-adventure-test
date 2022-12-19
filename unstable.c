@@ -10,23 +10,27 @@ void secondPart();
 void thirdPart();
 void monologue();
 void nothing();
-void stablePath();
-void stablePathChoices();
 void unstablePath();
 void unstablePathChoices();
 void continuePromptStable();
 void continuePromptUnstable();
-void stablePartOne();
 
 int startFunc(void) {
 
 firstPart();
 secondPart();
-}
+};
 
 int exitFunc(void) {
 
-printf("Exit");
+printf("Exit\n");
+};
+
+// Main
+int main() {
+
+	startFunc();
+	return 0;
 }
 
 void firstPart() {
@@ -37,29 +41,26 @@ void firstPart() {
 	printf("Welcome %s\n", name);
 }
 
+
+
 void secondPart() {
-
-	char introOne[] = {"Welcome Pick from these options: Start(S), Exit(E) \n"};
-	char start[] = {"S"};
-	char exit[] = {"E"};
-	char input[20];
-	int valueOne;
-	int valueTwo;
-
+	
+	char introOne[] = {"Welcome Pick from these options: Start(1), Exit(2) \n"};
+	int input[20];
+    int start = 1;
+    int exit = 2;
+    
 	printf("%s\n", introOne);
 	printf("Type your option: ");
-	scanf("%s", input);
-
-	valueOne = strcmp(start, input);
-	valueTwo = strcmp(exit, input);
-
-	if(valueOne == 0) {
-		thirdPart();
-	}
-	if(valueTwo == 0) {
-		printf("Farewell, %s", name);
-	}
-
+	scanf("%d", input);
+    
+    if (*input == 1) (
+        thirdPart()
+    );
+    if (*input == 2) {
+        exitFunc();
+    } 
+    
 }
 
 void thirdPart() {
@@ -70,54 +71,32 @@ void thirdPart() {
 void monologue() {
 
 	char introTwo[] = {"Why do you exist?\n"};
-	char options[] = {"pick from options: Stable(S), Unstable(U)\n"};
-	char stable[] = {"S"};
-	char unstable[] = {"U"};
-	char misc[] = {"N"};
-	char input[10];
-	int valueThree;
-	int valueFour;
-	int valueFive;
+    char options[] = {"pick from options: Stable(1), Unstable(2)\n"};
+    int stable = 1;
+    int unstable = 2;
+    int nothng = 3;
+	int input[10];
 
 	printf("%s", introTwo);
 	printf("%s", options);
-	scanf("%s", input);	
+	printf(">> "); 
+	scanf("%d", input);	
 
-
-	valueThree = strcmp(stable, input);
-	valueFour = strcmp(unstable, input);
-	valueFive = strcmp(misc, input);
-
-	switch (valueThree) {
-
-		case 0:
-			// printf("To Improve\n");
-			// continuePromptStable();
-			exitFunc();
-			break;
-	}
-	switch (valueFour) {
-
-		case 0:
-			printf("To Die "); 
-			continuePromptUnstable(); 
-			break;
-	}
-	switch (valueFive) {
-
-		case 0:
-			nothing();
-	}
-
-/*	if(valueThree == 0)
-		printf("To Improve\n"); continuePromptStable(); stablePath();
-
-	if(valueFour == 0)
-		printf("To Die "); continuePromptUnstable(); unstablePath();
-
-	if(valueFive == 0)
-		nothing();
-*/
+    if (stable == *input) {
+        // printf("To Improve\n");
+        // continuePromptStable();
+        printf("Not Available\n");
+        exitFunc();
+    }
+    if (unstable == *input) {
+        printf("To be Alive? \n");
+        printf("???: Interesting \n");
+        continuePromptUnstable();
+    }
+    if (nothng == *input) {
+        nothing();
+    }
+    
 }
 
 void nothing() {
@@ -126,110 +105,34 @@ void nothing() {
 
 }
 
-void stablePath() {
-
-	printf("Well then, Good Luck %s\n", name);
-	stablePathChoices();
-}
-void stablePathChoices() {
-
-	stablePartOne(); 
-}
-
-void stablePartOne() {
-
-	printf("Part One - Stable");
-	
-}
-
 void unstablePath() {
 
-	printf("Good luck, %s\n", name);
+	printf("How long will you last? \n");
 	unstablePathChoices();
 }
 
 void unstablePathChoices() {
 
-	printf("Unstable Path Choices");
-}
-
-void continuePromptStable() {
-
-	char continueIntro[] = {"Do you wish to Continue?\n"};
-	char options[] = {"Options: Yes(Y),No(N)"};
-	char yes[] = {"Y"};
-	char no[] = {"N"};
-	char input[10];
-	int valueSix;
-	int valueSeven;
-
-	printf("%s\n", continueIntro);
-	printf("%s\n", options);
-	scanf("%s", input);
-
-	valueSix = strcmp(input, yes);
-	valueSeven = strcmp(input, no);
-
-	switch (valueSix) {
-
-		case 0:
-			printf("Contine\n");
-			stablePath();
-	}
-/*	switch (valueSeven) {
-
-case 0:
-	exitFunc();
-}
-*/
-/*	if(valueSix == 0)
-	printf("Continue\n"); */
-	if(valueSeven == 0)
-		exitFunc();
-
-
+	printf("Unstable Path Choices\n");
 }
 
 void continuePromptUnstable() {
 
 	char continueIntro[] = {"Do you wish to Continue?\n"};
-	char options[] = {"Options: Yes(Y),No(N)"};
-	char yes[] = {"Y"};
-	char no[] = {"N"};
-	char input[10];
-	int valueSix;
-	int valueSeven;
+	char options[] = {"Options: Yes(1),No(2)\n"};
+	int yes = 1;
+	int no = 2;
+	int input[10];
 
 	printf("%s\n", continueIntro);
 	printf("%s\n", options);
-	scanf("%s", input);
+	printf(">> ");
+	scanf("%d", input);
 
-	valueSix = strcmp(input, yes);
-	valueSeven = strcmp(input, no);
-
-	switch (valueSix) {
-
-	case 0:
-		printf("Contine\n");
+	if (yes == *input) {
+		printf("Continue\n");
 		unstablePath();
-		break;
-	}
-	switch (valueSeven) {
+	} 
+	if (no ==*input) ( exitFunc() );
 
-	case 0:
-		exitFunc();
-		break;
-	}
-
-/*	if(valueSix == 0)
-	printf("Continue\n");
-if(valueSeven == 0)
-	exitFunc();
-*/	
-}
-
-int main() {
-
-	startFunc();
-	return 0;
 }
