@@ -1,7 +1,7 @@
 # terminal-adventure
 ## Practice in C 
 
-### Roadmap : (/ = Finished) 
+### Roadmap : (/ = Half-assed will be fixed) 
 
 > 1st - 3rd Parts  [ / ]
 
