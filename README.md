@@ -14,7 +14,9 @@
 
 via Makefile:
        make ma (compile and run main.c)
+       
        make up (compile and run unstable.c)
+       
        make sta (compile and run stable.c)
       
  
