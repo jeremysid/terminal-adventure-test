@@ -111,10 +111,8 @@ void monologue() {
 
 /*	if(valueThree == 0)
 		printf("To Improve\n"); continuePromptStable(); stablePath();
-
 	if(valueFour == 0)
 		printf("To Die "); continuePromptUnstable(); unstablePath();
-
 	if(valueFive == 0)
 		nothing();
 */
@@ -177,7 +175,6 @@ void continuePromptStable() {
 			stablePath();
 	}
 /*	switch (valueSeven) {
-
 case 0:
 	exitFunc();
 }
