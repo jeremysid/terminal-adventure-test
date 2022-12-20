@@ -14,10 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: main
-      run: make ma
+      run: make main
     - name: unstable
-      run: make up
+      run: make u
     - name: stable
-      run: make sta
+      run: make s
     - name: clean
       run: make clean
