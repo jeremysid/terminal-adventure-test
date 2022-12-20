@@ -3,20 +3,18 @@
 
 ### Roadmap : 
 
-> 1st - 3rd Parts  [ Getiing cleaned up ]
+> 1st - 3rd Parts  [ Done ]
 
-> Stable Path
+> Stable Path [in progress ]
 
-> Unstable Path
+> Unstable Path [in progress (first)]
 
 
-## How to compile:
+## How to compile and run:
 
-(what i mainly use)
-
-with gcc:
-
- gcc main.c -o main.sh && ./main.sh 
-
-                   (^ or any other like .exe or .x86_64)
-
+via Makefile:
+       make ma (compile and run main.c)
+       make up (compile and run unstable.c)
+       make sta (compile and run stable.c)
+      
+ 
