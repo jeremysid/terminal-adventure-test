@@ -1,15 +1,14 @@
 # terminal-adventure
 ## Practice in C 
 
-### Roadmap : (/ = Half-assed will be fixed) 
+### Roadmap : 
 
-> 1st - 3rd Parts  [ / ]
+> 1st - 3rd Parts  [ Getiing cleaned up ]
 
 > Stable Path
 
 > Unstable Path
 
-> Nothing
 
 ## How to compile:
 
