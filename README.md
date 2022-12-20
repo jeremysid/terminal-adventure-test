@@ -12,7 +12,7 @@
 
 ## How to compile and run:
 
-via Makefile:
+via Makefile: (in terminal)
 
        make ma (compile and run main.c)
        
