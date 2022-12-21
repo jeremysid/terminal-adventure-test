@@ -41,10 +41,9 @@ void secondPart() {
 
 	if ( *input == start ) {
 		thirdPart();
-	}
-	if ( *input == exit ) {
+	} else if ( *input == exit ) {
 		exitFunc();
-	}
+	} else { exitFunc(); }
 }
 
 void thirdPart() {
@@ -71,15 +70,11 @@ void monologue() {
 		printf("To get Stronger\n");
 		printf("???: I see well good LUCK \n");
 		continuePromptStable();
-	}
-    if (unstable == *input) {
+	} else if (unstable == *input) {
         printf("To be Alive? \n");
         printf("???: Interesting \n");
         continuePromptUnstable();
-    }
-	if (*input == nothng) {
-		nothing();
-	} 
+    } else { exitFunc(); } 
 
 }
 
@@ -132,8 +127,8 @@ void continuePromptStable() {
 	if ( *input == yes ) {
 		printf("Continue\n");
 		stablePath();
-	} 
-	if ( *input == no ) ( exitFunc() );
+	} else if ( *input == no ) ( exitFunc() );
+		else { exitFunc(); }
 
 }
 
@@ -153,9 +148,8 @@ void continuePromptUnstable() {
 	if (yes == *input) {
 		printf("Continue\n");
 		unstablePath();
-	} 
-	if (no ==*input) ( exitFunc() );
-
+	} else if (no ==*input) ( exitFunc() );
+		else { exitFunc(); }
 }
 
 
