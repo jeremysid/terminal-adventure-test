@@ -22,7 +22,7 @@ int main() {
 
 void firstPart() {
 
-	printf("Welcome to Terminal Adventure\n");
+	printf("Welcome to Terminal Adventure(Unstable) \n");
 	printf("Enter your Alias: ");
 	scanf("%s", name);
 	printf("Welcome %s\n", name);
