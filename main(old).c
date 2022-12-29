@@ -29,14 +29,10 @@ void firstPart() {
 
 void secondPart() {
 
-	char introOne[] = {"Welcome, Pick from these options: "};
-	char optionOne[] = {"Start(1)"};
-	char optionTwo[] = {"Exit(2)\n"};
+	char introOne[] = {"Welcome Pick from these options: Start(1), Exit(2) \n"};
 	int choice[20];
 
 	printf("%s\n", introOne);
-	printf("%s\n", optionOne);
-	printf("%s\n", optionTwo);
 	printf("Type your Choice\n");
 	printf(">> ");
 	scanf("%d", choice);
@@ -59,91 +55,28 @@ void secondPart() {
 void thirdPart() {
 
 	char introTwo[] = {"Why do you exist?\n"};
-    char optionText[] = {"Pick from these options:\n"};
-	char optionOne[] = {"Stable(1) = To get Stronger\n"};
-	char optionTwo[] = {"Unstable(2) = To get by\n"};
+    char options[] = {"pick from options: Stable(1), Unstable(2)\n"};
 	int choice[10];
 	
 	printf("%s", introTwo);
-	printf("%s", optionText);
-	printf("%s", optionOne);
-	printf("%s", optionTwo);
+	printf("%s", options);
 	printf(">> ");
 	scanf("%d", choice);	
 	
 	switch(*choice) {
 		case 1:
 			printf("To get Stronger\n");
-			printf("???: hm interesting \n");
+			printf("???: I see well good LUCK \n");
 			continuePromptStable();
 			break;
 		case 2:
-			printf("To get by \n");
-			printf("???: well that's boring \n");
+			printf("To be Alive? \n");
+			printf("???: Interesting \n");
 			continuePromptUnstable();
 			break;
 	    default:
 			exitFunc(); 
 	}
-}
-
-void continuePromptStable() {
-
-	char continueIntro[] = {"Do you wish to Continue?\n"};
-	char optionText[] = {"Options:"};
-	char optionOne[] = {"Yes(1) "};
-	char optionTwo[] = {"No(2) \n"};
-	int choice[10];
-
-	printf("%s\n", continueIntro);
-	printf("%s\n", optionText);
-	printf("%s\n", optionOne);
-	printf("%s\n", optionTwo);
-	printf(">> ");
-	scanf("%d", choice);
-
-	switch(*choice) {
-		case 1:
-			printf("Continue\n");
-			stablePath();
-			break;
-		case 2:
-			exitFunc();
-			break;
-		default:
-			exitFunc();
-	}
-
-}
-
-void continuePromptUnstable() {
-
-	char continueIntro[] = {"Do you wish to Continue?\n"};
-	char optionText[] = {"Options:"};
-	char optionOne[] = {"Yes(1) "};
-	char optionTwo[] = {"No(2) \n"};
-	int choice[10];
-
-	printf("%s\n", continueIntro);
-	printf("%s\n", optionText);
-	printf("%s\n", optionOne);
-	printf("%s\n", optionTwo);
-	printf(">> ");
-	scanf("%d", choice);
-
-	switch(*choice) {
-		case 1:
-			printf("Continue\n");
-			unstablePath();
-			break;
-		case 2:
-			exitFunc();
-			break;
-		default:
-			exitFunc();
-
-	}
-
 }
 
 void stablePath() {
@@ -173,4 +106,54 @@ void unstablePathChoices() {
 	printf("Unstable Path Choices \n");
 }
 
+void continuePromptStable() {
+
+	char continueIntro[] = {"Do you wish to Continue?\n"};
+	char options[] = {"Options: Yes(1),No(2)\n"};
+	int choice[10];
+
+	printf("%s\n", continueIntro);
+	printf("%s\n", options);
+	printf(">> ");
+	scanf("%d", choice);
+
+	switch(*choice) {
+		case 1:
+			printf("Continue\n");
+			stablePath();
+			break;
+		case 2:
+			exitFunc();
+			break;
+		default:
+			exitFunc();
+	}
+
+}
+
+void continuePromptUnstable() {
+
+	char continueIntro[] = {"Do you wish to Continue?\n"};
+	char options[] = {"Options: Yes(1),No(2)\n"};
+	int choice[10];
+
+	printf("%s\n", continueIntro);
+	printf("%s\n", options);
+	printf(">> ");
+	scanf("%d", choice);
+
+	switch(*choice) {
+		case 1:
+			printf("Continue\n");
+			unstablePath();
+			break;
+		case 2:
+			exitFunc();
+			break;
+		default:
+			exitFunc();
+
+	}
+
+}
 
